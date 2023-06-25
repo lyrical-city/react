@@ -1,0 +1,13 @@
+{
+  "name": "lyrical-react",
+  "description": "Lyrical react.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "ignoreChanges": [
+    "ignored-file",
+    "**/__tests__/**",
+    "**/*.md"
+  ]
+}
