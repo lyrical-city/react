@@ -1,5 +1,43 @@
 {
   "name": "@lyrical/react-directive",
   "version": "0.0.0",
-  "description": "Lyrical react directive."
+  "description": "Lyrical react directive.",
+  "keywords": [
+    "typescript",
+    "lyrical",
+    "react",
+    "directive"
+  ],
+  "author": {
+    "name": "City",
+    "email": "city@nanzc.com"
+  },
+  "homepage": "https://github.com/lyrical-city/react/tree/main/packages/directive#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyrical-city/react.git"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "scripts": {
+    "build": "lough-build",
+    "dev": "lough-build dev"
+  },
+  "dependencies": {
+    "@logically/coding-model": "^0.1.1"
+  },
+  "devDependencies": {
+    "@lough/build-cli": "^0.2.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

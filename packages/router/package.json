@@ -1,5 +1,43 @@
 {
   "name": "@lyrical/react-router",
   "version": "0.0.0",
-  "description": "Lyrical react router."
+  "description": "Lyrical react router.",
+  "keywords": [
+    "typescript",
+    "lyrical",
+    "react",
+    "router"
+  ],
+  "author": {
+    "name": "City",
+    "email": "city@nanzc.com"
+  },
+  "homepage": "https://github.com/lyrical-city/react/tree/main/packages/router#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyrical-city/react.git"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "scripts": {
+    "build": "lough-build",
+    "dev": "lough-build dev"
+  },
+  "devDependencies": {
+    "@lough/build-cli": "^0.2.0"
+  },
+  "peerDependencies": {
+    "react-router-dom": "^6.4.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

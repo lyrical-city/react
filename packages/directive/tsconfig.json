@@ -1,0 +1,4 @@
+{
+  "extends": "@lough/tsconfig/react",
+  "include": ["src"]
+}
