@@ -1,0 +1,61 @@
+.lyric-checkbox {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+
+  input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--color-6);
+  }
+
+  &.lyric-checkbox-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+
+    label {
+      cursor: not-allowed;
+    }
+  }
+
+  &.lyric-checkbox-checked label::before {
+    background-color: var(--color-6);
+  }
+
+  &.lyric-checkbox-children label::before {
+    margin-right: 8px;
+  }
+
+  &:not(.lyric-checkbox-disabled) label:hover::before {
+    border-color: var(--color-5);
+  }
+}
+
+.lyric-checkbox-group {
+  display: inline-block;
+
+  .lyric-checkbox:not(:first-child) {
+    margin-left: 16px;
+  }
+}

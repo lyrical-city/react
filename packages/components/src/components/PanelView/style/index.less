@@ -1,0 +1,28 @@
+.lyric-panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  &:not(.space-between) .lyric-panel-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lyric-panel-operate {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > :not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

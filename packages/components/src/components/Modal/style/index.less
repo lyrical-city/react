@@ -1,0 +1,157 @@
+.lyric-modal-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 35%);
+  opacity: 0;
+
+  &.close {
+    opacity: 0;
+    pointer-events: none;
+
+    &.animation {
+      animation: modal-root-close 0.2s ease;
+
+      .lyric-modal {
+        animation: modal-close 0.2s ease;
+      }
+    }
+
+    .lyric-modal {
+      transform: scale(0);
+    }
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+
+    &.animation {
+      animation: modal-root-open 0.2s ease;
+
+      .lyric-modal {
+        animation: modal-open 0.2s ease;
+      }
+    }
+
+    .lyric-modal {
+      transform: scale(1);
+    }
+  }
+
+  .lyric-modal {
+    position: relative;
+    min-width: 520px;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    background-color: #fff;
+    transform: scale(0);
+
+    .lyric-modal-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      cursor: pointer;
+
+      &:hover .lyric-modal-x {
+        color: #666;
+      }
+
+      .lyric-modal-x {
+        font-size: 16px;
+        color: #999;
+      }
+    }
+
+    .lyric-modal-header {
+      display: flex;
+      align-items: center;
+      height: 54px;
+      padding-left: 24px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .lyric-modal-header-dev {
+        display: flex;
+        align-items: flex-end;
+
+        .title {
+          font-size: 18px;
+          font-weight: 500;
+          color: #333;
+          word-wrap: break-word;
+          user-select: none;
+        }
+
+        .explain {
+          margin-left: 20px;
+          font-size: 14px;
+          font-weight: 450;
+          color: #999;
+        }
+      }
+    }
+
+    .lyric-modal-body {
+      padding: 20px;
+    }
+
+    .lyric-modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 52px;
+      padding: 0 16px;
+      border-top: 1px solid #f0f0f0;
+    }
+  }
+}
+
+@keyframes modal-root-open {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-root-close {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-open {
+  0% {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-close {
+  0% {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,44 @@
+.lyric-input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding: 5px 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-border);
+  outline: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  transition: all 0.3s;
+
+  &[data-size='large'] {
+    height: 36px;
+    font-size: 16px;
+  }
+
+  &[data-size='middle'] {
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &[data-size='small'] {
+    height: 28px;
+    font-size: 12px;
+  }
+
+  &::placeholder {
+    color: var(--color-border);
+  }
+
+  &:hover {
+    border-color: var(--color-5);
+  }
+
+  &:focus {
+    border-color: var(--color-7);
+  }
+
+  &:active {
+    border-color: var(--color-7);
+  }
+}

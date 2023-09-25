@@ -1,0 +1,130 @@
+.lyric-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  line-height: 1;
+  color: var(--color-text-primary);
+  background-color: transparent;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  &.lyric-button-loading {
+    opacity: 0.65;
+    cursor: default;
+  }
+
+  &.large {
+    height: 36px;
+    font-size: 16px;
+  }
+
+  &.middle {
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &.small {
+    height: 28px;
+    font-size: 12px;
+  }
+
+  &.primary {
+    color: #fff;
+    background: var(--color-6);
+
+    &:not(:disabled) {
+      &:hover {
+        background: var(--color-5);
+      }
+
+      &:active {
+        background: var(--color-7);
+      }
+    }
+
+    .lyric-loading-icon {
+      fill: #fff;
+    }
+  }
+
+  &.default {
+    border: 1px solid #d9d9d9;
+    color: var(--color-text-primary);
+    background-color: transparent;
+
+    &:not(:disabled) {
+      &:hover {
+        border-color: var(--color-6);
+        color: var(--color-6);
+      }
+
+      &:active {
+        border-color: var(--color-7);
+      }
+    }
+  }
+
+  &.dashed {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+
+    &:not(:disabled) {
+      &:hover {
+        border-color: var(--color-6);
+        color: var(--color-6);
+      }
+
+      &:active {
+        border-color: var(--color-7);
+      }
+    }
+  }
+
+  &.text {
+    color: var(--color-text-primary);
+    background-color: transparent;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: var(--color-dividers);
+      }
+
+      &:active {
+        background-color: var(--color-border);
+      }
+    }
+  }
+
+  &.link {
+    width: auto;
+    height: auto;
+    padding: 0;
+    line-height: normal;
+    color: var(--color-6);
+    background-color: transparent;
+
+    &:not(:disabled) {
+      &:hover {
+        color: var(--color-5);
+      }
+
+      &:active {
+        color: var(--color-7);
+      }
+    }
+  }
+}

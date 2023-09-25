@@ -1,0 +1,101 @@
+.lyric-switch {
+  position: relative;
+  min-width: 44px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+
+  &:not(.lyric-switch-checked) {
+    background-color: #bfbfbf;
+
+    &::before {
+      left: 2px;
+    }
+
+    .lyric-switch-inline {
+      .lyric-switch-checked {
+        margin-inline-start: calc(9px - 100% + 22px);
+        margin-inline-end: calc(24px + 100% - 22px);
+      }
+
+      .lyric-switch-unchecked {
+        margin-inline-start: 24px;
+        margin-inline-end: 9px;
+      }
+    }
+  }
+
+  &.lyric-switch-checked {
+    background-color: var(--color-6);
+
+    &:not(:disabled):hover {
+      background-color: var(--color-5);
+    }
+
+    &::before {
+      left: calc(100% - 20px);
+    }
+
+    .lyric-switch-inline {
+      .lyric-switch-checked {
+        margin-inline-start: 9px;
+        margin-inline-end: 24px;
+      }
+
+      .lyric-switch-unchecked {
+        margin-inline-start: calc(24px + 100% - 22px);
+        margin-inline-end: calc(9px - 100% + 22px);
+      }
+    }
+  }
+
+  .lyric-switch-inline {
+    position: relative;
+    height: 100%;
+
+    .lyric-switch-checked {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transition: all 0.3s;
+    }
+
+    .lyric-switch-unchecked {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin-top: -22px;
+      transition: all 0.3s;
+    }
+  }
+}

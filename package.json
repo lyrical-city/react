@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "lint:es": "eslint -c .eslintrc.js --ext .ts,.tsx ./",
     "lint:es-fix": "eslint --fix -c .eslintrc.js --ext .ts,.tsx ./",
     "lint:style": "stylelint --config .stylelintrc.js ./**/*.{css,less,scss,styl}",

@@ -1,0 +1,45 @@
+.lyric-message-plate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  pointer-events: none;
+}
+
+.lyric-message {
+  margin-top: -5px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.lyric-message-content {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  vertical-align: middle;
+  pointer-events: all;
+  user-select: none;
+
+  > span {
+    vertical-align: middle;
+  }
+}
+
+.lyric-message .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  overflow: hidden;
+  fill: currentcolor;
+  vertical-align: middle;
+}

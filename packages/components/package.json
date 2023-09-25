@@ -2,5 +2,46 @@
   "name": "@lyrical/react-components",
   "version": "0.1.0",
   "description": "Lyrical react components.",
-  "private": true
+  "keywords": [
+    "typescript",
+    "lyrical",
+    "react",
+    "components"
+  ],
+  "author": {
+    "name": "City",
+    "email": "city@nanzc.com"
+  },
+  "homepage": "https://github.com/lyrical-city/react/tree/main/packages/components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyrical-city/react.git"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "lough-build",
+    "dev": "lough-build dev"
+  },
+  "dependencies": {
+    "@logically/dom-calc": "^0.1.0",
+    "@lyrical/effects": "^0.1.1",
+    "@lyrical/react-directive": "^0.1.0",
+    "lucide-react": "^0.104.0"
+  },
+  "devDependencies": {
+    "@lough/build-cli": "^0.2.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
