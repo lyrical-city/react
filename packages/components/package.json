@@ -32,13 +32,18 @@
     "dev": "lough-build dev"
   },
   "dependencies": {
+    "@logically/coding-advanced": "^0.1.0",
     "@logically/dom-calc": "^0.1.0",
     "@lyrical/effects": "^0.1.1",
     "@lyrical/react-directive": "^0.1.0",
     "lucide-react": "^0.104.0"
   },
+  "peerDependencies": {
+    "@lyrical/theme": "^0.1.0"
+  },
   "devDependencies": {
-    "@lough/build-cli": "^0.2.0"
+    "@lough/build-cli": "^0.2.0",
+    "less": "^4.2.0"
   },
   "publishConfig": {
     "access": "public",

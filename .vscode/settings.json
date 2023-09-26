@@ -50,5 +50,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "stylelint.validate": ["css", "less", "scss", "sass", "stylus", "vue"]
+  "stylelint.validate": ["css", "less", "scss", "sass", "stylus", "vue"],
+  "css-smart.globalThemePackage": ["@lyrical/theme"]
 }

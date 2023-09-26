@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { createThrottleInterval, elementWhetherPartInView } from '@logically/dom-calc';
+import { createDebounce } from '@logically/coding-advanced';
+import { elementWhetherPartInView } from '@logically/dom-calc';
 
 /**
  * 懒加载组件参数
@@ -50,7 +51,7 @@ export const LazyView: React.FC<ILazyViewProps> = ({
   useEffect(() => {
     if (show) return () => null;
 
-    const callback = createThrottleInterval(
+    const callback = createDebounce(
       () => {
         if (!ref.current) return;
 
@@ -61,7 +62,7 @@ export const LazyView: React.FC<ILazyViewProps> = ({
           setShow(true);
         }
       },
-      { interval, creating: true, delayed: true, initial: true }
+      { interval, leading: true }
     );
 
     mountElement.addEventListener('scroll', callback);

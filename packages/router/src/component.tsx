@@ -10,7 +10,7 @@ const Component = ({ route }: { route: IRoute }) => {
 /**
  * 路由器核心
  */
-const RouterCore = (routes: Array<IRoute>, loader: React.ReactNode) => {
+const RouterCore = (routes: Array<IRoute>, loader?: React.ReactNode) => {
   return routes.map(({ defaultChildPath = true, ...route }) => {
     return (
       <Route
@@ -41,6 +41,6 @@ const RouterCore = (routes: Array<IRoute>, loader: React.ReactNode) => {
 /**
  * 路由器视图
  */
-export const RouterView = (props: { routes: Array<IRoute>; loader: React.ReactNode }) => {
+export const RouterView = (props: { routes: Array<IRoute>; loader?: React.ReactNode }) => {
   return <Routes>{RouterCore(props.routes, props.loader)}</Routes>;
 };

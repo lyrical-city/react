@@ -7,7 +7,8 @@ export default defineConfig({
     'lucide-react',
     '@lyrical/effects',
     '@logically/dom-calc',
-    '@lyrical/react-directive'
+    '@lyrical/react-directive',
+    '@logically/coding-advanced'
   ],
   globals: {
     react: 'React',
@@ -15,7 +16,8 @@ export default defineConfig({
     'lucide-react': 'LucideReact',
     '@lyrical/effects': 'lyricalEffects',
     '@logically/dom-calc': 'logicallyDomCalc',
-    '@lyrical/react-directive': 'lyricalReactDirective'
+    '@lyrical/react-directive': 'lyricalReactDirective',
+    '@logically/coding-advanced': 'logicallyCodingAdvanced'
   },
   style: true,
   input: 'src/index.ts'

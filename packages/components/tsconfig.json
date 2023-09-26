@@ -1,4 +1,7 @@
 {
   "extends": "@lough/tsconfig/react",
+  "compilerOptions": {
+    "jsx": "react"
+  },
   "include": ["src"]
 }
