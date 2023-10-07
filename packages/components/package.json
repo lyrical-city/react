@@ -35,7 +35,7 @@
     "@logically/coding-advanced": "^0.1.0",
     "@logically/dom-calc": "^0.1.0",
     "@lyrical/effects": "^0.1.1",
-    "@lyrical/react-directive": "^0.1.0",
+    "@lyrical/react-directive": "^0.1.1",
     "lucide-react": "^0.104.0"
   },
   "peerDependencies": {
