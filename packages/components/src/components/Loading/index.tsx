@@ -57,14 +57,14 @@ export const Loading: React.FC<LoadingProps> = props => {
         <TransitionVisible show={loading}>{loadingRender}</TransitionVisible>
         <TransitionVisible show={!loading}>{children as any}</TransitionVisible>
       </>
-    ) /*  (loading ? <>{loadingRender}</> : <>{children}</>) */,
+    ),
     [children, loading, loadingRender]
   );
 
   const fillRender = useMemo(() => {
     const r = (
       <>
-        {loadingRender}
+        {loading && loadingRender}
         {!loading || count.current > 1 ? children : null}
       </>
     );

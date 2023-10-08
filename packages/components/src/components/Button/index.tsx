@@ -48,7 +48,7 @@ export interface ButtonProps {
    */
   htmlType?: 'button' | 'reset' | 'submit';
   /**
-   * 主题
+   * 类型
    */
   type?: 'link' | 'text' | 'dashed' | 'default' | 'primary';
   /**

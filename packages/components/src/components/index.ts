@@ -12,3 +12,4 @@ export * from './Modal';
 export * from './Menu';
 export * from './Loading';
 export * from './WithComponent';
+export * from './PanelView';

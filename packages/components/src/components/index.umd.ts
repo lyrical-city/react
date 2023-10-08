@@ -9,3 +9,4 @@ export * from './Skeleton/style';
 export * from './Modal/style';
 export * from './Menu/style';
 export * from './Loading/style';
+export * from './PanelView/style';
