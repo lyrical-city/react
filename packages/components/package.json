@@ -1,6 +1,6 @@
 {
   "name": "@lyrical/react-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lyrical react components.",
   "keywords": [
     "typescript",
@@ -35,7 +35,7 @@
     "@logically/coding-advanced": "^0.1.0",
     "@logically/dom-calc": "^0.1.0",
     "@lyrical/effects": "^0.1.1",
-    "@lyrical/react-directive": "^0.1.1",
+    "@lyrical/react-directive": "^0.1.2",
     "lucide-react": "^0.104.0"
   },
   "peerDependencies": {
