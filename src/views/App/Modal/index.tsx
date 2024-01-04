@@ -19,6 +19,59 @@ const ModalView = () => (
     >
       Modal
     </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      onClick={() => {
+        Modal.confirm({
+          title: '温馨提示',
+          content: `确定删除吗？`,
+          cancelText: '取消',
+          okText: '删除'
+        });
+      }}
+    >
+      Confirm
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      onClick={() => {
+        Modal.info({
+          content: `Info`
+        });
+      }}
+    >
+      Info
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      onClick={() => {
+        Modal.success({
+          content: `Success`
+        });
+      }}
+    >
+      Success
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      onClick={() => {
+        Modal.error({
+          content: `Error`
+        });
+      }}
+    >
+      Error
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      onClick={() => {
+        Modal.warning({
+          content: `Warning`
+        });
+      }}
+    >
+      Warning
+    </Button>
   </div>
 );
 

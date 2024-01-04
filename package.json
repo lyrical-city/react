@@ -31,7 +31,7 @@
     "@lough/vite-plugin-import": "^0.1.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "husky": "^7.0.2",
     "lerna": "^6.6.1",
     "lint-staged": "^11.1.2",

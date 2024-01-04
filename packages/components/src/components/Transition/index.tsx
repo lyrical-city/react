@@ -227,14 +227,14 @@ export class Transition<T extends Record<string, any> = Record<string, any>> ext
 
   performEnter() {
     this.setState({ status: TRANSITION_STATUS.ENTER_START });
-    setTimeout(() => {
+    window.requestAnimationFrame(() => {
       this.onEnterStart();
 
-      setTimeout(() => {
+      window.requestAnimationFrame(() => {
         this.onEnterProgress();
         setTimeout(() => this.onEntered(), this.props.timeout?.enter || 300);
-      }, 10);
-    }, 10);
+      });
+    });
   }
 
   performExit() {

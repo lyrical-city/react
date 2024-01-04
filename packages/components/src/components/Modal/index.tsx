@@ -66,6 +66,16 @@ export interface ModalProps {
    * 取消按钮参数
    */
   cancelButtonProps?: ButtonProps;
+  /**
+   * 是否显示关闭按钮
+   * @default true
+   */
+  closable?: boolean;
+  /**
+   * 遮罩是否可以点击关闭
+   * @default true
+   */
+  maskClosable?: boolean;
 }
 
 function ModalOrigin(props: ModalProps) {
@@ -81,6 +91,8 @@ function ModalOrigin(props: ModalProps) {
     onCancel,
     cancelText,
     cancelButtonProps,
+    closable = true,
+    maskClosable = true,
     children
   } = props;
 
@@ -103,11 +115,16 @@ function ModalOrigin(props: ModalProps) {
   }, [onOk]);
 
   return (
-    <div className={`lyric-modal-root ${visible ? 'open' : 'close'}${animation ? ' animation' : ''}`} onClick={close}>
+    <div
+      className={`lyric-modal-root ${visible ? 'open' : 'close'}${animation ? ' animation' : ''}`}
+      onClick={maskClosable ? close : undefined}
+    >
       <div className='lyric-modal' onClick={e => e.stopPropagation()}>
-        <div className='lyric-modal-close' onClick={close}>
-          <CloseIcon className='lyric-modal-x' />
-        </div>
+        {closable && (
+          <div className='lyric-modal-close' onClick={close}>
+            <CloseIcon className='lyric-modal-x' />
+          </div>
+        )}
         {title && (
           <div className='lyric-modal-header'>
             <div className='lyric-modal-header-dev'>
@@ -138,41 +155,64 @@ function ModalOrigin(props: ModalProps) {
   );
 }
 
-const modal = new DirectiveElement<ModalProps>({ hiddenTimeout: 200 });
-
-/**
- * 信息提示
- */
-ModalOrigin.info = (props: Omit<ModalProps, keyof DirectiveProps>) => {
-  return modal.open(props => <Modal visible={props.visible}>信息</Modal>, props);
-};
+const modal = new DirectiveElement<ModalProps>({
+  hiddenTimeout: 200,
+  transformProps: props => {
+    return {
+      closable: false,
+      maskClosable: false,
+      cancelButtonProps: { style: { display: 'none' } },
+      onCancel() {
+        props.onCancel?.();
+        props.hidden();
+      },
+      async onOk() {
+        await props.onOk?.();
+        props.hidden();
+      }
+    };
+  }
+});
 
 /**
  * 确认提示
  */
 ModalOrigin.confirm = (props: Omit<ModalProps, keyof DirectiveProps>) => {
-  return modal.open(props => <Modal visible={props.visible}>确认</Modal>, props);
+  return modal.open(Modal, props, {
+    transformProps: () => {
+      return {
+        cancelButtonProps: { style: { display: 'block' } }
+      };
+    }
+  });
+};
+
+/**
+ * 信息提示
+ */
+ModalOrigin.info = (props: Omit<ModalProps, keyof DirectiveProps>) => {
+  return modal.open(Modal, { okText: '知道了', ...props });
 };
 
 /**
  * 成功提示
  */
 ModalOrigin.success = (props: Omit<ModalProps, keyof DirectiveProps>) => {
-  return modal.open(props => <Modal visible={props.visible}>成功</Modal>, props);
+  return modal.open(Modal, { okText: '知道了', ...props });
 };
 
 /**
  * 警告提示
  */
 ModalOrigin.warning = (props: Omit<ModalProps, keyof DirectiveProps>) => {
-  return modal.open(props => <Modal visible={props.visible}>警告</Modal>, props);
+  return modal.open(Modal, { okText: '知道了', ...props });
 };
 
 /**
  * 错误提示
  */
 ModalOrigin.error = (props: Omit<ModalProps, keyof DirectiveProps>) => {
-  return modal.open(props => <Modal visible={props.visible}>错误</Modal>, props);
+  return modal.open(Modal, { okText: '知道了', ...props });
 };
 
 export const Modal = ModalOrigin;

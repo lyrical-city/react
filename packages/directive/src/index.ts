@@ -23,9 +23,21 @@ export class DirectiveElement<EP> {
     props: Omit<P, keyof DirectiveProps<R>>,
     options: DirectiveOptions<Omit<P, keyof DirectiveProps>, R> = {}
   ) {
+    const _options = this.options as unknown as DirectiveOptions<Omit<P, keyof DirectiveProps>, R>;
     const e = new ControlledElement<P, R>(element, {
-      ...(this.options as unknown as DirectiveOptions<Omit<P, keyof DirectiveProps>, R>),
-      ...options
+      ..._options,
+      ...options,
+      transformProps: _props => {
+        if (_options.transformProps) {
+          Object.assign(_props, _options.transformProps({ ..._props }));
+        }
+
+        if (options.transformProps) {
+          Object.assign(_props, options.transformProps({ ..._props }));
+        }
+
+        return _props;
+      }
     });
 
     e.open(props);
